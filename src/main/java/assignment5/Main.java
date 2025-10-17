@@ -8,7 +8,7 @@ public class Main {
         SmartHomeFacade home = new SmartHomeFacade();
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("=== 🏠 Smart Home Control Panel ===");
+        System.out.println("Smart Home Control Panel");
         System.out.println("Commands: 1 = Turn ON / Start | 0 = Turn OFF / Stop | 9 = Exit");
 
         while (true) {
