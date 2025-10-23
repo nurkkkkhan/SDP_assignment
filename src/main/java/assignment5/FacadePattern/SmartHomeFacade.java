@@ -1,9 +1,5 @@
 package assignment5.FacadePattern;
-
 import assignment5.Devices.*;
-
-
-
 public class SmartHomeFacade {
 
     private Light light;
@@ -57,6 +53,12 @@ public class SmartHomeFacade {
     }
 
     public void adjustThermostat(int temp) {
+        if(temp == 1){
+            thermostat.increaseTemperature();
+        }else if (temp == 0) {
+            System.out.println("Make proper decision ");
+        }
+        else
         thermostat.setTemperature(temp);
     }
 }
