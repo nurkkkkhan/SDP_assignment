@@ -17,6 +17,7 @@ public class Main {
             System.out.println("2. Music System ");
             System.out.println("3. Security Camera ");
             System.out.println("4. Thermostat");
+            System.out.println("5. Clap IT!");
             System.out.println("9. Exit ");
             System.out.print("Enter choice: ");
             int choice = scanner.nextInt();
@@ -79,6 +80,13 @@ public class Main {
                     break;
                 }
 
+                case 5: {
+                    System.out.println("Clap it!");
+                    System.out.println("Choose the button 1 or 1");
+                    int cmd = scanner.nextInt();
+                    home.controlClap(cmd);
+                    System.out.println( cmd + "You've turned off all devices");
+                }
                 default:
                     System.out.println(" Invalid choice, please try again.");
             }

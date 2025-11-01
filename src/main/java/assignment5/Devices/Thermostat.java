@@ -2,8 +2,18 @@ package assignment5.Devices;
 
 public class Thermostat implements Device{
     private int temperature = 10;
-    private boolean isOn = true;
+    private static boolean isOn = true;
     private String mode = "auto";
+
+    public static void turnOn(){
+        isOn = true;
+        System.out.println("Thermostat has turned on");
+    }
+    public static void turnOff(){
+        isOn = false;
+        System.out.println("Thermostat has turned off");
+    }
+
 
     public void setTemperature(int temp){
         temperature=temp;
@@ -28,6 +38,12 @@ public class Thermostat implements Device{
 
 @Override
     public void operate(){
+        if(!isOn){
+            turnOn();
+        }else{
+            turnOff();
+        }
+
     System.out.println("The temperature now is:" + temperature +"C,Mode: "+mode);
     increaseTemperature();
 }

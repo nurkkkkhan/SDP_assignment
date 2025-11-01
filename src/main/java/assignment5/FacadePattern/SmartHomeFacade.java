@@ -7,6 +7,7 @@ public class SmartHomeFacade {
     private SecurityCamera camera;
     private Thermostat thermostat;
 
+
     public SmartHomeFacade() {
 
         light = new Light() {};
@@ -53,6 +54,12 @@ public class SmartHomeFacade {
     }
 
     public void adjustThermostat(int temp) {
+        if(temp == 9){
+            thermostat.turnOff();
+        }
+        else if(temp == 8){
+            thermostat.turnOn();
+        }
         if(temp == 1){
             thermostat.increaseTemperature();
         }else if (temp == 0) {
@@ -60,5 +67,21 @@ public class SmartHomeFacade {
         }
         else
         thermostat.setTemperature(temp);
+    }
+    public void controlClap(int command){
+        if (command == 1){
+            light.turnOff();
+            thermostat.turnOff();
+            musicSystem.stop();
+            camera.stopRecording();
+        }else if(command == 1){
+            light.turnOn();
+            thermostat.turnOn();
+            musicSystem.play();
+            camera.startRecording();
+        }
+        else{
+            System.out.println("Everything has turned off");
+        }
     }
 }

@@ -11,7 +11,6 @@ public abstract class MusicSystem implements Device {
         System.out.println("Music system plays now" + currentSong + volume);
     }
 
-
     public void stop() {
         isPlaying = false;
         System.out.println("Music system stopped ");

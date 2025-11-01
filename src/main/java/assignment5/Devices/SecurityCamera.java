@@ -5,7 +5,6 @@ public class SecurityCamera implements Device{
     private boolean nightVision = true;
     private String recordQuality = "1440p";
 
-
     public void setQuality(String quality){
         recordQuality=quality;
         System.out.println("The record quality is: " + quality);
