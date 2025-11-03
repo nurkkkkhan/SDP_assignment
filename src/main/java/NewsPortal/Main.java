@@ -20,8 +20,8 @@ public class Main {
         System.out.println("Implementation of Observer,Strategy,Facade and Builder Patterns");
         System.out.println(separator);
 
-        System.out.println("\n\n[Interactive notification system]");
-        System.out.println("you can choose how to send notifications \n");
+        System.out.println("[Interactive notification system]");
+        System.out.println("you can choose how to send notifications ");
         NP facade = new NP();
         System.out.println("===Add Subs===");
         boolean addMoreSubscribers = true;
@@ -41,7 +41,7 @@ public class Main {
             System.out.println();
         }
 
-        System.out.println("\n===Publish Articles===");
+        System.out.println("===Publish Articles===");
         boolean publishMoreArticles = true;
         while(publishMoreArticles){
             System.out.println("Enter Article Title(or 'done' to finish): ");
@@ -64,7 +64,7 @@ public class Main {
             System.out.println();
         }
 
-        System.out.println("\n===Change Notification Method===");
+        System.out.println("===Change Notification Method===");
         System.out.println("Enter subscriber name to change notification method(or 'skip'): ");
         String subscriberName = scanner.nextLine().trim();
 
@@ -84,23 +84,23 @@ public class Main {
             }
         }
 
-        System.out.println("\n\n"+separator);
+        System.out.println("\n"+separator);
         System.out.println("Direct Pattern Usage Demonstration");
         System.out.println(separator);
 
         demonstrateDirectPatternUsage();
 
-        System.out.println("\n\n"+separator);
+        System.out.println("\n"+separator);
         System.out.println("Builder Pattern Usage Demonstration");
         System.out.println(separator);
         demonstrateBuilderPattern();
 
-        System.out.println("\n\n" + separator);
+        System.out.println("\n" + separator);
         System.out.println("   STRATEGY PATTERN - Multiple Strategies");
         System.out.println(separator);
         demonstrateStrategyPattern();
 
-        System.out.println("\n\n" + separator);
+        System.out.println("\n" + separator);
         System.out.println("   DEMONSTRATION COMPLETE");
         System.out.println(separator);
 
@@ -110,7 +110,7 @@ public class Main {
     private static NotificationType getNotificationTypeFromUser(){
         NotificationType type = null;
         while(type==null){
-            System.out.println("\n Choose notification method: ");
+            System.out.println(" Choose notification method: ");
             System.out.println("1.Email");
             System.out.println("2.SMS");
             System.out.println("3.Push");
@@ -158,7 +158,7 @@ public class Main {
           agency.publishArticle(article);
     }
     private static void demonstrateBuilderPattern() {
-        System.out.println("\nUsing ArticleBuilder to create articles with a fluent interface:\n");
+        System.out.println("Using ArticleBuilder to create articles with a fluent interface:\n");
 
         Article article1 = new ArticleBuilder()
                 .title("Sports: World Cup Finals")
@@ -178,7 +178,7 @@ public class Main {
 
         System.out.println("Article 2 Created: " + article2);
 
-        System.out.println("\n✓ Builder pattern allows for flexible and readable object construction");
+        System.out.println("Builder pattern allows for flexible and readable object construction");
     }
 
     private static void demonstrateStrategyPattern() {
@@ -220,7 +220,7 @@ public class Main {
 
         agency.publishArticle(article);
 
-        System.out.println("\n Strategy pattern allows runtime switching between notification methods");
+        System.out.println(" Strategy pattern allows runtime switching between notification methods");
     }
 
     private static String repeatString(String str, int times) {
