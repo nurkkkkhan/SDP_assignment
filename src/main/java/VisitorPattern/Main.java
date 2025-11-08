@@ -46,11 +46,5 @@ public class Main {
                 System.out.println("Retype book/electronics/0");
             }
         }
-        Calculator calculator = new Calculator();
-        for (Element item: items){
-            item.accept(calculator);
-        }
-        System.out.println("Total "+calculator.getTotal());
-        scanner.close();
     }
 }
