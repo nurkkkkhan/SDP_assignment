@@ -41,23 +41,11 @@ public class Main {
                 double price = scanner.nextDouble();
                 items.add(new ElectronicsSection(name,brand,category,price));
             }
-                else{
-                break;
+             else{
+                 break;
             }
         }
         scanner.close();
-
-        System.out.println("Your personal shopping cart");
-        cart displayVisitor = new cart();
-        for (Element item:items){
-            item.accept(displayVisitor);
-        }
-
-        Calculator priceVisitor = new Calculator();
-        for (Element item:items){
-            item.accept(priceVisitor);
-        }
-        System.out.println("Total price: " + priceVisitor.getTotal());
     }
 }
 
