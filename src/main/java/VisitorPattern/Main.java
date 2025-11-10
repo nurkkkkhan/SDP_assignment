@@ -47,7 +47,7 @@ public class Main {
         }
         scanner.close();
 
-        System.out.println("Your cart");
+        System.out.println("Your shopping cart");
         cart displayVisitor = new cart();
         for (Element item:items){
             item.accept(displayVisitor);
