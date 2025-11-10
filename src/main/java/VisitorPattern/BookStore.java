@@ -1,12 +1,12 @@
 package VisitorPattern;
 
-class BookStore implements Element{
+class BookSection implements Element{
     String name;
     String author;
     String genre;
     double price;
 
-    public BookStore(String name,String author,String genre, double price){
+    public BookSection(String name, String author, String genre, double price){
         this.name=name;
         this.price=price;
         this.author = author;

@@ -28,7 +28,7 @@ public class Main {
                 String genre = scanner.nextLine();
                 System.out.println("Enter price: $");
                 double price = scanner.nextDouble();
-                items.add(new BookStore(title,author,genre,price));
+                items.add(new BookSection(title,author,genre,price));
             }
                 else if(type.equals("electronics")){
                 System.out.println("Enter the name: ");
@@ -39,7 +39,7 @@ public class Main {
                 String category = scanner.nextLine();
                 System.out.println("Enter the price: $");
                 double price = scanner.nextDouble();
-                items.add(new ElectronicsShop(name,brand,category,price));
+                items.add(new ElectronicsSection(name,brand,category,price));
             }
                 else{
                 break;
@@ -47,7 +47,7 @@ public class Main {
         }
         scanner.close();
 
-        System.out.println("Your shopping cart");
+        System.out.println("Your personal shopping cart");
         cart displayVisitor = new cart();
         for (Element item:items){
             item.accept(displayVisitor);
