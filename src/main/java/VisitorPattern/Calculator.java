@@ -3,11 +3,11 @@ package VisitorPattern;
 public class Calculator  implements Visitor{
     private double total = 0;
 
-    public void visit(Book book){
+    public void visitBook(BookStore book){
         total += book.price;
     }
 
-    public void visit(Electronics electronics){
+    public void visitElectronics(ElectronicsShop electronics){
         total += electronics.price;
     }
 

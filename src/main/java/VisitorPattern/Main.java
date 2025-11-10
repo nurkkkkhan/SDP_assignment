@@ -1,9 +1,4 @@
 package VisitorPattern;
-import VisitorPattern.Element;
-import VisitorPattern.Visitor;
-import VisitorPattern.Calculator;
-import VisitorPattern.Book;
-import VisitorPattern.Electronics;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,9 +22,13 @@ public class Main {
             if(type.equals("book")){
                 System.out.println("Enter book title: ");
                 String title = scanner.nextLine();
+                System.out.println("Enter book author: ");
+                String author = scanner.nextLine();
+                System.out.println("Enter genre: ");
+                String genre = scanner.nextLine();
                 System.out.println("Enter price: $");
                 double price = scanner.nextDouble();
-                items.add(new Book(title, price));
+                items.add(new BookStore(title,author,genre,price));
             }
                 else if(type.equals("electronics")){
                 System.out.println("Enter the name: ");
@@ -40,11 +39,25 @@ public class Main {
                 String category = scanner.nextLine();
                 System.out.println("Enter the price: $");
                 double price = scanner.nextDouble();
-                items.add(new Electronics(name,brand,category,price));
+                items.add(new ElectronicsShop(name,brand,category,price));
             }
                 else{
-                System.out.println("Retype book/electronics/0");
+                break;
             }
         }
+        scanner.close();
+
+        System.out.println("Your cart");
+        cart displayVisitor = new cart();
+        for (Element item:items){
+            item.accept(displayVisitor);
+        }
+
+        Calculator priceVisitor = new Calculator();
+        for (Element item:items){
+            item.accept(priceVisitor);
+        }
+        System.out.println("Total price: " + priceVisitor.getTotal());
     }
 }
+
